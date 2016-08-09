@@ -1,7 +1,7 @@
 <?php
 
 require_once(__DIR__.'/config.php');
-require_once(__DIR__.'/timezone.class.php');
+
 
 
 global $conn;
@@ -9,7 +9,7 @@ global $conn;
 class Db{
 	
 	private $logging = true;
-	private $timezone = null;
+	
 	private $in_transaction=false;
 	
 	
@@ -19,7 +19,7 @@ class Db{
 		$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
 		$conn->set_charset("utf8");
 		$this->connection = $conn;
-		$this->timezone = new timezone;
+		
 		
 	}
 

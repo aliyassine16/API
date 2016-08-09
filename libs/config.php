@@ -2,14 +2,14 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-date_default_timezone_set('UTC'); //This is important. All timezone things must go through timezone.class
+date_default_timezone_set('UTC');
 
 
-define("DB_USER", "root"); //"root");//
-define("DB_PASSWORD", "root");//"");//
+define("DB_USER", "root");
+define("DB_PASSWORD", "root");
 define("DB_HOST", "127.0.0.1");
 define("DB_PORT", 3306);
-define("DB_NAME", "caconnect_clone");//"campaign");//
+define("DB_NAME", "api_local");
 
 
 
@@ -35,9 +35,9 @@ define("TIMEZONE", "Europe/London");
 
 define("ROOT", realpath($_SERVER['DOCUMENT_ROOT'])."/");
 
-define("EMAIL_ADDRESS","jack.gillett@sclgroup.cc"); // All e-mails from system will go from this address
+define("EMAIL_ADDRESS","aliyassine16@gmail.com"); // All e-mails from system will go from this address
 
-define("WEB_ROOT", "/var/www/caconnect/caconnect");
+define("WEB_ROOT", "/var/www/api.local/");
 
 
 
