@@ -1,3 +1,8 @@
 <?php
-echo "api.local";
+
+
+require_once(__DIR__."/apiTest.php");
+
+$test=new apiTest;
+echo $test->getClientName();
 ?>

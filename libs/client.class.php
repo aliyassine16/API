@@ -5,7 +5,7 @@ require_once(__DIR__.'/base_class.php');
 class client extends base_class
 {
 
-	function GetAccessToken($){
+	function GetAccessToken(){
 
 		
 		// 				http://api.local/api/client/getAccessToken/
@@ -18,7 +18,7 @@ class client extends base_class
 
 	function getClientName(){
 
-		if(isset($_POST["accessToken"])){
+		if(isset($_POST) && isset($_POST["accessToken"])){
 			$data= array("clientName"=>"Cambridge Analytica");
 			return $this->success($data);
 		}else{

@@ -19,19 +19,19 @@ class apiTest
 
 	private $error_message = "";
 
-	private function getClientName()
+	public function getClientName()
 	{
-		/***********************************************************************************************************************************/
-        /////////////////////////////////////////////// get the access token
+		
+		
 		$authenticationArray = array(
-			'AuthenticationToken:'=>$this->hapikey,
-			'ClientId:'=>$this->client_id
+			'AuthenticationToken'=>$this->hapikey,
+			'ClientId'=>$this->client_id
 			);
 
 		$post_json = json_encode($authenticationArray);
 
 		$endpoint_token = $this->apiDomain."api/client/GetAccessToken";
-		echo $endpoint_token;
+		//echo $endpoint_token;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_POST, true);
 
@@ -45,56 +45,59 @@ class apiTest
 		$response = curl_exec($ch);
 		curl_close($ch);
 		$json_response = json_decode($response);
-        //print_r($json_response);
+		//var_dump($json_response);
 
+		
 		if (isset($json_response)) {
-			if (isset($json_response->success) && $json_response->success== "false") {
-				$this->error_message = $json_response->message;
-				return false;
-			}
-			else{
-				
-				$accessToken=$json_response->data[0]["accessToken"];
-				/**************************************************************************************************************************/
-                /////////////////////////////////////////////// get the client name
-                //echo $accessToken;
+			
+
+
+			$accessToken=$json_response->data->accessToken;
+
+			//echo $accessToken; 
                 // now we have the access token
-				if(isset($accessToken)) {
+			if(isset($accessToken)) {
 
 
 
-					$authenticationArray = array(
-						'AccessToken' => $accessToken
-						'AuthenticationToken:'=>$this->hapikey,
-						'ClientId:'=>$this->client_id
-						);
+				$authenticationArray = array(
+					'AccessToken' => $accessToken,
+					'AuthenticationToken'=>$this->hapikey,
+					'ClientId'=>$this->client_id
+					);
 
-					$post_json = json_encode($authenticationArray);
+				$post_json = json_encode($authenticationArray);
 
 
-					$endpoint_token = $this->apiDomain . "api/client/getClientName";
-					$ch = curl_init();
-					curl_setopt($ch, CURLOPT_POST, true);
+				$endpoint_token = $this->apiDomain . "api/client/getClientName";
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_POST, true);
 
-					curl_setopt($ch, CURLOPT_URL, $endpoint_token);
-					$headers = array(
-						'Content-Type: application/json'						
-						);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post_json);
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					$response = curl_exec($ch);
-					curl_close($ch);
+				curl_setopt($ch, CURLOPT_URL, $endpoint_token);
+				
+				$headers = array(
+					'Content-Type: application/json'						
+					);
 
-					$json_response = json_decode($response);
+				curl_setopt($curl, CURLOPT_VERBOSE, true);
+				curl_setopt($curl, CURLOPT_STDERR, fopen('php://stderr', 'w'));
+				
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $post_json);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				$response = curl_exec($ch);
+				curl_close($ch);
 
-					if (isset($json_response)) {
+				$json_response = json_decode($response);
 
-						var_dump($json_response)
-					}
-				}
+				//if (isset($json_response)) {
+
+				var_dump($json_response);
+				//}
 			}
+
 		}
+
 
 	}
 }
