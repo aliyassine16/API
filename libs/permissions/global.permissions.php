@@ -1,0 +1,4 @@
+<?php
+
+global $permissions;
+$permissions=[];
