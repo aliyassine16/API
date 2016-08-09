@@ -22,9 +22,23 @@ $session->start();
 
 
 //credentials check 
-$session->login("admin","password");
 
-if (!$session->check()){echo json_encode(array("expired"=>true));exit();}
+if(isset($_POST) && isset($_POST["ClientId"])){
+	$client_id=$_POST["ClientId"];
+	$api_key=$_POST["hapikey"];
+}
+else{
+	$client_id="admin";
+	$api_key=md5("password");
+}
+
+
+$session->login($client_id,$api_key);
+
+if (!$session->check()){
+	echo json_encode ( array("success" => 'false', "message" => "login failed","data"=>$_POST));
+	exit();
+}
 
 $api = new Api;
 

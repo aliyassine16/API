@@ -129,7 +129,8 @@ public function validate_user($username, $password) {
 
    $passwordSecure = $db->secure($password);
      //$is_valid_password = password_verify($passwordSecure, $user['password']);
-   $is_valid_password=(md5($passwordSecure)== $user['password']);
+   //$is_valid_password=(md5($passwordSecure)== $user['password']);
+   $is_valid_password=(($passwordSecure)== $user['password']);
 
 
    if( $is_valid_password ) {
@@ -249,7 +250,8 @@ protected function create_session($user) {
       $secure = $data->fetch_object();
       $user_id = $secure->user_id;
             //if (password_verify($password, $secure->password)) {
-      if (md5($password)== $secure->password) {
+      //if (md5($password)== $secure->password) {
+      if (($password)== $secure->password) {
             //$pass_hash=hash('sha512', $password );
             //if ($pass_hash=== $secure->password) {
                 //Check if Two-factor auth is required by the role
