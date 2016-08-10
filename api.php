@@ -37,7 +37,7 @@ if (isset($data) && isset($data->ClientId)) {
 $session->login($client_id, $api_key);
 
 if (!$session->check()) {
-    echo json_encode(array("success" => 'false', "message" =>"Login Failed"));
+    echo json_encode(array("success" => 'false', "message" =>"Authentication  Failed"));
     exit();
 }
 
