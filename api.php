@@ -2,9 +2,8 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-ini_set('memory_limit','-1');
+ini_set('memory_limit', '-1');
 set_time_limit(0);
-
 
 
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -23,26 +22,31 @@ $session->start();
 
 //credentials check 
 
-if(isset($_POST) && isset($_POST["ClientId"])){
-	$client_id=$_POST["ClientId"];
-	$api_key=$_POST["hapikey"];
+
+
+$data =json_decode(file_get_contents('php://input'));
+$client_id = "";
+$api_key = "";
+
+
+if (isset($data) && isset($data->ClientId)) {
+    $client_id = $data->ClientId;
+    $api_key = $data->ApiKey;
 }
-else{
-	$client_id="admin";
-	$api_key=md5("password");
-}
 
+$session->login($client_id, $api_key);
 
-$session->login($client_id,$api_key);
-
-if (!$session->check()){
-	echo json_encode ( array("success" => 'false', "message" => "login failed","data"=>$_POST));
-	exit();
+if (!$session->check()) {
+    echo json_encode(array("success" => 'false', "message" =>"Login Failed"));
+    exit();
 }
 
 $api = new Api;
 
 echo json_encode($api->execute());
+
+
+
 
 $session->logout();
 

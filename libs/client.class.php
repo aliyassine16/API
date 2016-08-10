@@ -1,34 +1,38 @@
 <?php
 
-require_once(__DIR__.'/base_class.php');
+require_once(__DIR__ . '/base_class.php');
 
 class client extends base_class
 {
 
-	function GetAccessToken(){
+    private $accessToken = "1234-5678";
 
-		
-		// 				http://api.local/api/client/getAccessToken/
-		
+    function getAccessToken()
+    {
+        // 				http://api.local/api/client/getAccessToken/
 
-		$data= array("accessToken"=>"1234-5678");
+        $data = array("accessToken" => $this->accessToken);
 
-		return $this->success($data);
-	}
+        return $this->success($data);
+    }
 
-	function getClientName(){
+    function getClientName()
+    {
 
-		if(isset($_POST) && isset($_POST["accessToken"])){
-			$data= array("clientName"=>"Cambridge Analytica");
-			return $this->success($data);
-		}else{
-			$data= "Invalid accessToken";
-			return $this->error($data);
+        $data = json_decode(file_get_contents('php://input'));
 
-		}
 
-		
-	}
+        if (isset($data) && isset($data->AccessToken) && ($data->AccessToken==$this->accessToken) ) {
+            $data = array("clientName" => "Cambridge Analytica");
+            return $this->success($data);
+        } else {
+            $data = "Invalid Access Token";
+            return $this->success($data);
+
+        }
+
+
+    }
 }
 
 ?>

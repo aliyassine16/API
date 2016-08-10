@@ -59,7 +59,9 @@ class Api{
 
 
 		if (!$allowed['success']){ return $allowed;}
-		return call_user_func_array(array($api, $api_function), $this->path_slugs);
+		$ret= call_user_func_array(array($api, $api_function), $this->path_slugs);
+		return $ret;
+
 	}
 	
 	
