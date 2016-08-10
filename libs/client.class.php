@@ -5,7 +5,7 @@ require_once(__DIR__ . '/base_class.php');
 class client extends base_class
 {
 
-    private $accessToken = "1234-5678";
+    private $accessToken = "1234-5678-1010-5050";
 
     function getAccessToken()
     {
@@ -16,13 +16,18 @@ class client extends base_class
         return $this->success($data);
     }
 
-    function getClientName()
+    private function isValidAccessToken($token)
+    {
+        return ($token == $this->accessToken);
+    }
+
+    public function getClientName()
     {
 
         $data = json_decode(file_get_contents('php://input'));
 
 
-        if (isset($data) && isset($data->AccessToken) && ($data->AccessToken==$this->accessToken) ) {
+        if (isset($data) && isset($data->AccessToken) && $this->isValidAccessToken($data->AccessToken)) {
             $data = array("clientName" => "Cambridge Analytica");
             return $this->success($data);
         } else {

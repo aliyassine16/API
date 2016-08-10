@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6286f9d1-17bc-40a5-b1bd-9e0c759c1fb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/automation/getAccessToken.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/automation/getClientName.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api.php" afterPath="$PROJECT_DIR$/api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apiTest.php" afterPath="$PROJECT_DIR$/apiTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/api.routing.class.php" afterPath="$PROJECT_DIR$/libs/api.routing.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automation/getClientName.sh" afterPath="$PROJECT_DIR$/automation/getClientName.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/client.class.php" afterPath="$PROJECT_DIR$/libs/client.class.php" />
     </list>
     <ignored path="api.local.iws" />
@@ -71,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="client.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/client.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="667">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,14 +79,14 @@
       <file leaf-file-name="getClientName.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/automation/getClientName.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+            <state relative-caret-position="116">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="session.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/session.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1363">
@@ -160,9 +155,9 @@
         <option value="$PROJECT_DIR$/libs/api.routing.class.php" />
         <option value="$PROJECT_DIR$/apiTest.php" />
         <option value="$PROJECT_DIR$/api.php" />
-        <option value="$PROJECT_DIR$/libs/client.class.php" />
         <option value="$PROJECT_DIR$/automation/getAccessToken.sh" />
         <option value="$PROJECT_DIR$/automation/getClientName.sh" />
+        <option value="$PROJECT_DIR$/libs/client.class.php" />
       </list>
     </option>
   </component>
@@ -310,12 +305,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1470819368919</updated>
-      <workItem from="1470819370107" duration="5407000" />
+      <workItem from="1470819370107" duration="6108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5407000" />
+    <option name="totallyTimeSpent" value="6108000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="2560" extended-state="6" />
@@ -409,26 +404,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/client.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/automation/getAccessToken.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automation/getClientName.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -465,6 +444,22 @@
             <marker date="1470751261152" expanded="true" signature="20971:21028" ph="SELECT `role... role" />
             <marker date="1470751261152" expanded="true" signature="21200:21259" ph="SELECT `dash... role" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automation/getClientName.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/client.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
