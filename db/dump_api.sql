@@ -1,19 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.13, for Linux (x86_64)
---
--- Host: localhost    Database: caconnect_clone
--- ------------------------------------------------------
--- Server version	5.7.13-0ubuntu0.16.04.2
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `log`
@@ -39,11 +24,6 @@ CREATE TABLE `log` (
 -- Dumping data for table `log`
 --
 
-LOCK TABLES `log` WRITE;
-/*!40000 ALTER TABLE `log` DISABLE KEYS */;
-INSERT INTO `log` VALUES (1,'2016-08-09 10:23:28',1,'group','test','',2130706433,1),(2,'2016-08-09 10:27:08',1,'group','test','',2130706433,1),(3,'2016-08-09 10:28:57',1,'group','test','',2130706433,1),(4,'2016-08-09 10:29:13',1,'group','test','',2130706433,1);
-/*!40000 ALTER TABLE `log` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `role`
@@ -186,7 +166,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin',1,'5f4dcc3b5aa765d61d8327deb882cf99',1,NULL,'2014-06-24 06:57:40',0,NULL,NULL,NULL,NULL,'a4551a85e3ff6fd6fb81128c3ff406adb9a00d6ba803da096d47a22c240c08195caf3e8b8086782ae2fe281bf990b635eb9f71d3ff4e66b1587064cfed4d16ac','2014-06-24 15:25:03','2016-08-09 11:29:13');
+INSERT INTO `user` VALUES (1,'admin',1,'5f4dcc3b5aa765d61d8327deb882cf99',1,NULL,'2014-06-24 06:57:40',0,NULL,NULL,NULL,NULL,'','2014-06-24 15:25:03','2016-08-09 11:29:13');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,7 +234,7 @@ CREATE TABLE `user_profiles` (
 
 LOCK TABLES `user_profiles` WRITE;
 /*!40000 ALTER TABLE `user_profiles` DISABLE KEYS */;
-INSERT INTO `user_profiles` VALUES (1,'Admin',NULL,'Admin','','','','','','','admin@caconnect.org','','','2001-01-01','','m','','','','','');
+INSERT INTO `user_profiles` VALUES (1,'Admin',NULL,'Admin','','','','','','','admin@admin.org','','','2001-01-01','','m','','','','','');
 /*!40000 ALTER TABLE `user_profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -339,12 +319,3 @@ LOCK TABLES `user_settings` WRITE;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-08-09 11:32:29
